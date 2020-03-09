@@ -16,6 +16,8 @@ namespace mensajeria
     [Activity(Label = "ListActivity")]
     public class ListActivity : Activity
     {
+        private readonly string[] contactsList = { "person A", "Person B", "Person C", "Person D" };
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,6 +33,20 @@ namespace mensajeria
             {
                 Intent homeIntent = new Intent(this, typeof(MainActivity));
                 StartActivity(homeIntent);
+            };
+
+            /**
+             * Fill List View
+             */
+            ListView lv = FindViewById<ListView>(Resource.Id.contactListView);
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, contactsList);
+            lv.Adapter = adapter;
+
+            /**
+             * List item click action
+             */
+            lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+                Toast.MakeText(this, "Go To Details screen: PENDING", ToastLength.Short).Show();
             };
         }
     }
