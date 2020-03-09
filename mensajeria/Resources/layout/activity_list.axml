@@ -7,16 +7,21 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:id="@+id/linearLayout1" >
-		<TextView
-			android:text="Activity Search and Contact List"
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/textView1" />
 		<Button
 			android:text="Volver"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/toMainScreenBtn" />
+		<EditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/searchField"
+			android:hint="Buscar" />
+		<ListView
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/contactListView" />
 	</LinearLayout>
 </LinearLayout>
