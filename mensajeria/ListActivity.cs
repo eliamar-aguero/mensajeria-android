@@ -46,7 +46,10 @@ namespace mensajeria
              * List item click action
              */
             lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
-                Toast.MakeText(this, "Go To Details screen: PENDING", ToastLength.Short).Show();
+                string selected = lv.GetItemAtPosition(e.Position).ToString();
+                Intent toDetailIntent = new Intent(this, typeof(ContactDetailActivity));
+                toDetailIntent.PutExtra("id", selected);
+                StartActivity(toDetailIntent);
             };
         }
     }

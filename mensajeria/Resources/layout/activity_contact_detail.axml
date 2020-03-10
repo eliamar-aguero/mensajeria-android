@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<Button
+		android:text="Volver"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/backToContactListBtn" />
+	<LinearLayout
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="15dp"
+		android:id="@+id/linearLayout1">
+		<ImageView
+			android:src="@android:drawable/ic_menu_gallery"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/imageView1" />
+		<TextView
+			android:text="Activity Detail"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAlignment="center"
+			android:id="@+id/textView1" />
+		<TextView
+			android:text="+(506) 7111 8141"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/textView2" />
+		<TextView
+			android:text="Móvil"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView3" />
+		<TextView
+			android:text="eliamar.aguero@janeirodigital.com"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/textView4" />
+		<TextView
+			android:text="Email"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView5" />
+	</LinearLayout>
+    <Button
+		android:text="Editar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/button1" />
+    <Button
+		android:text="Eliminar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/deleteContactBtn" />
+</LinearLayout>
