@@ -66,6 +66,11 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/editTextPaginaWeb" />
+        <Button
+            android:text="Guardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/GuardarBtn" />
 		<Button
 			android:text="Volver"
 			android:layout_width="match_parent"
