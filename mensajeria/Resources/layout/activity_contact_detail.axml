@@ -23,38 +23,90 @@
 			android:layout_height="wrap_content"
 			android:id="@+id/imageView1" />
 		<TextView
-			android:text="Activity Detail"
+			android:text="Eliamar Aguero"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:textAlignment="center"
-			android:id="@+id/textView1" />
+			android:id="@+id/txtName" />
 		<TextView
 			android:text="+(506) 7111 8141"
 			android:textAppearance="?android:attr/textAppearanceMedium"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="@dimen/abc_text_size_medium_material"
-			android:id="@+id/textView2" />
+			android:id="@+id/txtMobileTitle" />
 		<TextView
 			android:text="Móvil"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/textView3" />
+			android:id="@+id/txtMobileLabel" />
+        <TextView
+			android:text="+(506) 7111 8141"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtSMSTitle" />
+		<TextView
+			android:text="SMS"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtSMSLabel" />
+        <TextView
+			android:text="+(506) 2222 2222"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtPersonalPhoneTitle" />
+		<TextView
+			android:text="Teléfono Particular"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtPersonalPhoneLabel" />
+        <TextView
+			android:text="+(506) 4444 4444"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtWorkPhoneTitle" />
+		<TextView
+			android:text="Trabajo"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtWorkPhoneLabel" />
 		<TextView
 			android:text="eliamar.aguero@janeirodigital.com"
 			android:textAppearance="?android:attr/textAppearanceMedium"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="@dimen/abc_text_size_medium_material"
-			android:id="@+id/textView4" />
+			android:id="@+id/txtEmailTitle" />
 		<TextView
 			android:text="Email"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/textView5" />
+			android:id="@+id/txtEmailLabel" />
+        <TextView
+			android:text="eliamar.aguero"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtIMTitle" />
+		<TextView
+			android:text="IM"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtIMLabel" />
 	</LinearLayout>
     <Button
 		android:text="Editar"
