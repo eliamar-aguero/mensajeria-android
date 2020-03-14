@@ -53,10 +53,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView9"
             android:textStyle="bold" />
-        <Spinner
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner1" />
+            android:id="@+id/editTextArchivarComo" />
         <TextView
             android:text="Correo Electrónico"
             android:layout_width="match_parent"
@@ -98,19 +98,45 @@
             android:layout_height="wrap_content"
             android:id="@+id/editTextDireccionIM" />
         <TextView
-            android:text="Teléfono"
+            android:text="Teléfono trabajo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView3"
             android:textStyle="bold" />
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerTelefono" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editTextTelefono" />
+            android:id="@+id/editTextTelefonoTrabajo" />
+        <TextView
+            android:text="Teléfono Casa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView14"
+            android:textStyle="bold" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextTelefonoCasa" />
+        <TextView
+            android:text="Fax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView15"
+            android:textStyle="bold" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextFax" />
+        <TextView
+            android:text="Celular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView16"
+            android:textStyle="bold" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextCelular" />
         <TextView
             android:text="Dirección Trabajo"
             android:layout_width="match_parent"
@@ -130,7 +156,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText1" />
+            android:id="@+id/editTextCorrespondencia" />
         <TextView
             android:text="Notas"
             android:layout_width="match_parent"
