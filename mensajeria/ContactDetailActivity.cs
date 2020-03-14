@@ -26,7 +26,7 @@ namespace mensajeria
              * Get data from the list
              */
             string selectedContact = Intent.GetStringExtra("id");
-            TextView tv = FindViewById<TextView>(Resource.Id.textView1);
+            TextView tv = FindViewById<TextView>(Resource.Id.txtName);
             tv.Text = selectedContact;
 
             /**
