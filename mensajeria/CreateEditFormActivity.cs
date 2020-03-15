@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Content;
 using System.Data;
 using System;
+using Android.Provider;
 
 namespace mensajeria {
     [Activity(Label = "CreateEditFormActivity")]
@@ -43,6 +44,14 @@ namespace mensajeria {
             };
             FindViewById<Button>(Resource.Id.btnBack).Click += delegate {
                 StartActivity(homeIntent);
+            };
+
+            /**
+             * Open the camera
+             */
+            FindViewById<Button>(Resource.Id.FotoBtn).Click += delegate {
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                StartActivityForResult(intent, 0);
             };
 
             /**
@@ -116,7 +125,8 @@ namespace mensajeria {
                 etDireccionTrabajo.Text,
                 FindViewById<CheckBox>(Resource.Id.checkCorrespondencia).Checked.ToString() == "True" ? 1 : 0,
                 etNotas.Text
-            );
+            );         
+
             /**
             * After saving the contacto redirect to the home activity
             */
