@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 
 using Android.App;
 using Android.Content;
@@ -18,7 +19,6 @@ namespace mensajeria {
              * Go to home screen
              */
             Button toMainScreenBtn = FindViewById<Button>(Resource.Id.toMainScreenBtn);
-
             toMainScreenBtn.Click += delegate {
                 Intent homeIntent = new Intent(this, typeof(MainActivity));
                 StartActivity(homeIntent);
@@ -48,6 +48,12 @@ namespace mensajeria {
                 toDetailIntent.PutExtra("id", selected);
                 StartActivity(toDetailIntent);
             };
+
+            /**
+             * Filter contact list
+             */
+            EditText searchField = FindViewById<EditText>(Resource.Id.searchField);
+            searchField.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => adapter.Filter.InvokeFilter(searchField.Text);
         }
     }
 }
