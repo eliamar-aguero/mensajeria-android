@@ -3337,83 +3337,83 @@ namespace mensajeria
 			// aapt resource value: 0x7F08002D
 			public const int center_vertical = 2131230765;
 			
-			// aapt resource value: 0x7F08002E
-			public const int checkbox = 2131230766;
-			
 			// aapt resource value: 0x7F08002F
-			public const int chronometer = 2131230767;
+			public const int checkbox = 2131230767;
+			
+			// aapt resource value: 0x7F08002E
+			public const int checkCorrespondencia = 2131230766;
 			
 			// aapt resource value: 0x7F080030
-			public const int clip_horizontal = 2131230768;
+			public const int chronometer = 2131230768;
 			
 			// aapt resource value: 0x7F080031
-			public const int clip_vertical = 2131230769;
+			public const int clip_horizontal = 2131230769;
 			
 			// aapt resource value: 0x7F080032
-			public const int collapseActionView = 2131230770;
+			public const int clip_vertical = 2131230770;
 			
 			// aapt resource value: 0x7F080033
-			public const int contactListView = 2131230771;
+			public const int collapseActionView = 2131230771;
 			
 			// aapt resource value: 0x7F080034
-			public const int container = 2131230772;
+			public const int contactListView = 2131230772;
 			
 			// aapt resource value: 0x7F080035
-			public const int content = 2131230773;
+			public const int container = 2131230773;
 			
 			// aapt resource value: 0x7F080036
-			public const int contentPanel = 2131230774;
+			public const int content = 2131230774;
 			
 			// aapt resource value: 0x7F080037
-			public const int coordinator = 2131230775;
+			public const int contentPanel = 2131230775;
+			
+			// aapt resource value: 0x7F080038
+			public const int coordinator = 2131230776;
 			
 			// aapt resource value: 0x7F080001
 			public const int CTRL = 2131230721;
 			
-			// aapt resource value: 0x7F080038
-			public const int custom = 2131230776;
-			
 			// aapt resource value: 0x7F080039
-			public const int customPanel = 2131230777;
+			public const int custom = 2131230777;
 			
 			// aapt resource value: 0x7F08003A
-			public const int decor_content_parent = 2131230778;
+			public const int customPanel = 2131230778;
 			
 			// aapt resource value: 0x7F08003B
-			public const int default_activity_button = 2131230779;
+			public const int decor_content_parent = 2131230779;
 			
 			// aapt resource value: 0x7F08003C
-			public const int deleteContactBtn = 2131230780;
+			public const int default_activity_button = 2131230780;
 			
 			// aapt resource value: 0x7F08003D
-			public const int design_bottom_sheet = 2131230781;
+			public const int deleteContactBtn = 2131230781;
 			
 			// aapt resource value: 0x7F08003E
-			public const int design_menu_item_action_area = 2131230782;
+			public const int design_bottom_sheet = 2131230782;
 			
 			// aapt resource value: 0x7F08003F
-			public const int design_menu_item_action_area_stub = 2131230783;
+			public const int design_menu_item_action_area = 2131230783;
 			
 			// aapt resource value: 0x7F080040
-			public const int design_menu_item_text = 2131230784;
+			public const int design_menu_item_action_area_stub = 2131230784;
 			
 			// aapt resource value: 0x7F080041
-			public const int design_navigation_view = 2131230785;
+			public const int design_menu_item_text = 2131230785;
 			
 			// aapt resource value: 0x7F080042
-			public const int disableHome = 2131230786;
+			public const int design_navigation_view = 2131230786;
 			
 			// aapt resource value: 0x7F080043
-			public const int editTextArchivarComo = 2131230787;
+			public const int disableHome = 2131230787;
 			
 			// aapt resource value: 0x7F080044
-			public const int editTextCelular = 2131230788;
+			public const int editTextArchivarComo = 2131230788;
 			
 			// aapt resource value: 0x7F080045
-			public const int editTextCorreo = 2131230789;
+			public const int editTextCelular = 2131230789;
 			
 			// aapt resource value: 0x7F080046
-			public const int editTextCorrespondencia = 2131230790;
+			public const int editTextCorreo = 2131230790;
 			
 			// aapt resource value: 0x7F080047
 			public const int editTextDireccionIM = 2131230791;
@@ -3890,28 +3890,67 @@ namespace mensajeria
 			public const int transition_transform = 2131230943;
 			
 			// aapt resource value: 0x7F0800E0
-			public const int uniform = 2131230944;
+			public const int txtEmailLabel = 2131230944;
 			
 			// aapt resource value: 0x7F0800E1
-			public const int unlabeled = 2131230945;
+			public const int txtEmailTitle = 2131230945;
 			
 			// aapt resource value: 0x7F0800E2
-			public const int up = 2131230946;
+			public const int txtIMLabel = 2131230946;
 			
 			// aapt resource value: 0x7F0800E3
-			public const int useLogo = 2131230947;
+			public const int txtIMTitle = 2131230947;
 			
 			// aapt resource value: 0x7F0800E4
-			public const int view_offset_helper = 2131230948;
+			public const int txtMobileLabel = 2131230948;
 			
 			// aapt resource value: 0x7F0800E5
-			public const int visible = 2131230949;
+			public const int txtMobileTitle = 2131230949;
 			
 			// aapt resource value: 0x7F0800E6
-			public const int withText = 2131230950;
+			public const int txtName = 2131230950;
 			
 			// aapt resource value: 0x7F0800E7
-			public const int wrap_content = 2131230951;
+			public const int txtPersonalPhoneLabel = 2131230951;
+			
+			// aapt resource value: 0x7F0800E8
+			public const int txtPersonalPhoneTitle = 2131230952;
+			
+			// aapt resource value: 0x7F0800E9
+			public const int txtSMSLabel = 2131230953;
+			
+			// aapt resource value: 0x7F0800EA
+			public const int txtSMSTitle = 2131230954;
+			
+			// aapt resource value: 0x7F0800EB
+			public const int txtWorkPhoneLabel = 2131230955;
+			
+			// aapt resource value: 0x7F0800EC
+			public const int txtWorkPhoneTitle = 2131230956;
+			
+			// aapt resource value: 0x7F0800ED
+			public const int uniform = 2131230957;
+			
+			// aapt resource value: 0x7F0800EE
+			public const int unlabeled = 2131230958;
+			
+			// aapt resource value: 0x7F0800EF
+			public const int up = 2131230959;
+			
+			// aapt resource value: 0x7F0800F0
+			public const int useLogo = 2131230960;
+			
+			// aapt resource value: 0x7F0800F1
+			public const int view_offset_helper = 2131230961;
+			
+			// aapt resource value: 0x7F0800F2
+			public const int visible = 2131230962;
+			
+			// aapt resource value: 0x7F0800F3
+			public const int withText = 2131230963;
+			
+			// aapt resource value: 0x7F0800F4
+			public const int wrap_content = 2131230964;
 			
 			static Id()
 			{

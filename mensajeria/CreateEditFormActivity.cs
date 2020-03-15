@@ -36,7 +36,6 @@ namespace mensajeria {
             EditText etFax = FindViewById<EditText>(Resource.Id.editTextFax);
             EditText etCelular = FindViewById<EditText>(Resource.Id.editTextCelular);
             EditText etDireccionTrabajo = FindViewById<EditText>(Resource.Id.editTextDireccionTrabajo);
-            EditText etCorrespondencia = FindViewById<EditText>(Resource.Id.editTextCorrespondencia);
             EditText etNotas = FindViewById<EditText>(Resource.Id.editTextNotas);
 
             /**
@@ -48,17 +47,17 @@ namespace mensajeria {
                     etNombre.Text,
                     etOrganizacion.Text,
                     etPuesto.Text,
-                    etArchivarComo.Text, 
-                    etCorreo.Text, 
-                    etMostrarComo.Text, 
-                    etPaginaWeb.Text, 
+                    etArchivarComo.Text,
+                    etCorreo.Text,
+                    etMostrarComo.Text,
+                    etPaginaWeb.Text,
                     etDireccionIM.Text,
-                    etTelefonoTrabajo.Text, 
-                    etTelefonoCasa.Text, 
-                    etFax.Text, 
-                    etCelular.Text, 
-                    etDireccionTrabajo.Text, 
-                    int.Parse(etCorrespondencia.Text), 
+                    etTelefonoTrabajo.Text,
+                    etTelefonoCasa.Text,
+                    etFax.Text,
+                    etCelular.Text,
+                    etDireccionTrabajo.Text,
+                    FindViewById<CheckBox>(Resource.Id.checkCorrespondencia).Checked.ToString() == "True" ? 1 : 0,
                     etNotas.Text
                 );
                 /**
