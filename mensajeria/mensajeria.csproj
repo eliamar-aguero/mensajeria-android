@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
@@ -68,6 +69,8 @@
     <Compile Include="ContactDetailActivity.cs" />
     <Compile Include="Web References\ws_mensajeria.somee.com\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -119,8 +122,10 @@
       </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\activity_contact_detail.axml">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
