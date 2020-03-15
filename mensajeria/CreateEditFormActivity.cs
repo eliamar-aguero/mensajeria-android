@@ -43,23 +43,31 @@ namespace mensajeria {
              */
             FindViewById<Button>(Resource.Id.GuardarBtn).Click += delegate {
                 ws_mensajeria.somee.com.WebService1 ws = new ws_mensajeria.somee.com.WebService1();
-                ws.CreateContact(
-                    etNombre.Text,
-                    etOrganizacion.Text,
-                    etPuesto.Text,
-                    etArchivarComo.Text,
-                    etCorreo.Text,
-                    etMostrarComo.Text,
-                    etPaginaWeb.Text,
-                    etDireccionIM.Text,
-                    etTelefonoTrabajo.Text,
-                    etTelefonoCasa.Text,
-                    etFax.Text,
-                    etCelular.Text,
-                    etDireccionTrabajo.Text,
-                    FindViewById<CheckBox>(Resource.Id.checkCorrespondencia).Checked.ToString() == "True" ? 1 : 0,
-                    etNotas.Text
-                );
+                if (etNombre.Text != "" && etCelular.Text != "" && etCorreo.Text != "")
+                {
+                    ws.CreateContact(
+                   etNombre.Text,
+                   etOrganizacion.Text,
+                   etPuesto.Text,
+                   etArchivarComo.Text,
+                   etCorreo.Text,
+                   etMostrarComo.Text,
+                   etPaginaWeb.Text,
+                   etDireccionIM.Text,
+                   etTelefonoTrabajo.Text,
+                   etTelefonoCasa.Text,
+                   etFax.Text,
+                   etCelular.Text,
+                   etDireccionTrabajo.Text,
+                   FindViewById<CheckBox>(Resource.Id.checkCorrespondencia).Checked.ToString() == "True" ? 1 : 0,
+                   etNotas.Text
+               );
+                }else
+                {
+
+                    Toast.MakeText(Application, "Ingresar campos obligatorios(Nombre, Celular y correo)", ToastLength.Long).Show();
+                }
+               
                 /**
                  * After saving the contacto redirect to the home activity
                  */
