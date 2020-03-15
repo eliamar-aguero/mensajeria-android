@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 
 using Android.App;
 using Android.Content;
@@ -45,7 +44,7 @@ namespace mensajeria {
             lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
                 string selected = lv.GetItemAtPosition(e.Position).ToString();
                 Intent toDetailIntent = new Intent(this, typeof(ContactDetailActivity));
-                toDetailIntent.PutExtra("id", selected);
+                toDetailIntent.PutExtra("name", selected);
                 StartActivity(toDetailIntent);
             };
 

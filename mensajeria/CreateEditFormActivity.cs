@@ -20,6 +20,12 @@ namespace mensajeria {
             FindViewById<Button>(Resource.Id.toMainScreenBtn).Click += delegate {
                 StartActivity(homeIntent);
             };
+            // TODO: validate if is comming from the contact detail to edit the contact or is the create form
+            // TODO: the back route should be either the home screen or the details screen base on the condition above
+            // TODO: same as above with the `toMainScreenBtn` delegate event
+            FindViewById<Button>(Resource.Id.btnBack).Click += delegate {
+                StartActivity(homeIntent);
+            };
             /**
              * Get all text field from the layout
              */

@@ -6,7 +6,7 @@
 	android:layout_height="match_parent">
 	<Button
 		android:text="Volver"
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:id="@+id/backToContactListBtn" />
 	<LinearLayout
@@ -112,7 +112,7 @@
 		android:text="Editar"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/button1" />
+		android:id="@+id/btnEdit" />
     <Button
 		android:text="Eliminar"
 		android:layout_width="match_parent"
