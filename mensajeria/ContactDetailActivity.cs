@@ -1,10 +1,12 @@
-﻿using System.Data;
-
+﻿using System;
+using System.Data;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using Android.Net;
 using Android.OS;
 using Android.Widget;
+using Xamarin.Essentials;
+using Uri = Android.Net.Uri;
 
 namespace mensajeria
 {
@@ -20,6 +22,7 @@ namespace mensajeria
             TextView mobilePhone = FindViewById<TextView>(Resource.Id.txtMobileTitle);
             TextView personalPhone = FindViewById<TextView>(Resource.Id.txtPersonalPhoneTitle);
             TextView workPhone = FindViewById<TextView>(Resource.Id.txtWorkPhoneTitle);
+            TextView smsPhone = FindViewById<TextView>(Resource.Id.txtSMSTitle);
 
             /**
              * Get back to the list activity
@@ -40,7 +43,7 @@ namespace mensajeria
             contactInfo = ws.GetSingleContact(selectedContact);
             FindViewById<TextView>(Resource.Id.txtName).Text = contactInfo.Tables[0].Rows[0]["nombre"].ToString();
             mobilePhone.Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
-            FindViewById<TextView>(Resource.Id.txtSMSTitle).Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
+            smsPhone.Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
             personalPhone.Text = contactInfo.Tables[0].Rows[0]["tel_particular"].ToString();
             workPhone.Text = contactInfo.Tables[0].Rows[0]["tel_trabajo"].ToString();
             FindViewById<TextView>(Resource.Id.txtEmailTitle).Text = contactInfo.Tables[0].Rows[0]["email"].ToString();
@@ -63,6 +66,14 @@ namespace mensajeria
                 Intent call = new Intent(Intent.ActionDial, Uri.Parse("tel:" + phone));
                 StartActivity(call);
             }
+
+            /**
+             * Send SMS
+             */
+            smsPhone.Click += async delegate {
+                await SendSMS(smsPhone.Text);
+            };
+
 
             /**
              * Attempt to delete the contact
@@ -89,6 +100,14 @@ namespace mensajeria
                 toEditIntent.PutExtra("name", contactInfo.Tables[0].Rows[0]["nombre"].ToString());
                 StartActivity(toEditIntent);
             };
+        }
+
+        private async Task SendSMS(string to) {
+            try {
+                string msj = "";
+                var sms = new SmsMessage(msj, new string[] { to });
+                await Sms.ComposeAsync(sms);
+            } catch (Exception) { }
         }
     }
 }
