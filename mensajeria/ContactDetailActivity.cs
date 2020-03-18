@@ -1,15 +1,8 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Data;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 
 namespace mensajeria
@@ -70,6 +63,7 @@ namespace mensajeria
              */
             FindViewById<Button>(Resource.Id.btnEdit).Click += delegate {
                 Intent toEditIntent = new Intent(this, typeof(CreateEditFormActivity));
+                toEditIntent.PutExtra("name", contactInfo.Tables[0].Rows[0]["nombre"].ToString());
                 StartActivity(toEditIntent);
             };
         }
