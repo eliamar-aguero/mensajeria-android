@@ -27,9 +27,7 @@ namespace mensajeria
              * Get back to the list activity
              */
             Intent toContactListIntent = new Intent(this, typeof(ListActivity));
-
-            Button backToListBtn = FindViewById<Button>(Resource.Id.backToContactListBtn);
-            backToListBtn.Click += delegate {
+            FindViewById<Button>(Resource.Id.backToContactListBtn).Click += delegate {
                 StartActivity(toContactListIntent);
             };
 
