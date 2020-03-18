@@ -2,6 +2,7 @@
 
 using Android.App;
 using Android.Content;
+using Android.Net;
 using Android.OS;
 using Android.Widget;
 
@@ -15,6 +16,10 @@ namespace mensajeria
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.activity_contact_detail);
+
+            TextView mobilePhone = FindViewById<TextView>(Resource.Id.txtMobileTitle);
+            TextView personalPhone = FindViewById<TextView>(Resource.Id.txtPersonalPhoneTitle);
+            TextView workPhone = FindViewById<TextView>(Resource.Id.txtWorkPhoneTitle);
 
             /**
              * Get back to the list activity
@@ -34,12 +39,30 @@ namespace mensajeria
 
             contactInfo = ws.GetSingleContact(selectedContact);
             FindViewById<TextView>(Resource.Id.txtName).Text = contactInfo.Tables[0].Rows[0]["nombre"].ToString();
-            FindViewById<TextView>(Resource.Id.txtMobileTitle).Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
+            mobilePhone.Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
             FindViewById<TextView>(Resource.Id.txtSMSTitle).Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
-            FindViewById<TextView>(Resource.Id.txtPersonalPhoneTitle).Text = contactInfo.Tables[0].Rows[0]["tel_particular"].ToString();
-            FindViewById<TextView>(Resource.Id.txtWorkPhoneTitle).Text = contactInfo.Tables[0].Rows[0]["tel_trabajo"].ToString();
+            personalPhone.Text = contactInfo.Tables[0].Rows[0]["tel_particular"].ToString();
+            workPhone.Text = contactInfo.Tables[0].Rows[0]["tel_trabajo"].ToString();
             FindViewById<TextView>(Resource.Id.txtEmailTitle).Text = contactInfo.Tables[0].Rows[0]["email"].ToString();
             FindViewById<TextView>(Resource.Id.txtIMTitle).Text = contactInfo.Tables[0].Rows[0]["direccion_im"].ToString();
+
+            /**
+             * Call contact
+             */
+            mobilePhone.Click += delegate {
+                callToContactPhone(mobilePhone.Text);
+            };
+            personalPhone.Click += delegate {
+                callToContactPhone(personalPhone.Text);
+            };
+            workPhone.Click += delegate {
+                callToContactPhone(workPhone.Text);
+            };
+
+            void callToContactPhone(string phone) {
+                Intent call = new Intent(Intent.ActionDial, Uri.Parse("tel:" + phone));
+                StartActivity(call);
+            }
 
             /**
              * Attempt to delete the contact
