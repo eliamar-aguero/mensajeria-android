@@ -40,7 +40,6 @@ namespace mensajeria
             DataSet contactInfo = new DataSet();
 
             contactInfo = ws.GetSingleContact(selectedContact);
-            // TODO: add fallback in case of null values
             FindViewById<TextView>(Resource.Id.txtName).Text = contactInfo.Tables[0].Rows[0]["nombre"].ToString();
             FindViewById<TextView>(Resource.Id.txtMobileTitle).Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
             FindViewById<TextView>(Resource.Id.txtSMSTitle).Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
@@ -59,7 +58,8 @@ namespace mensajeria
                 deleteDialog.SetNegativeButton("Cancelar", delegate { });
                 deleteDialog.SetPositiveButton("Eliminar", delegate {
                     ws_mensajeria.somee.com.WebService1 ws = new ws_mensajeria.somee.com.WebService1();
-                    ws.DeleteContact(5);
+                    int id = int.Parse(contactInfo.Tables[0].Rows[0]["id"].ToString());
+                    ws.DeleteContact(id);
                     StartActivity(toContactListIntent);
                 });
                 deleteDialog.Show();
