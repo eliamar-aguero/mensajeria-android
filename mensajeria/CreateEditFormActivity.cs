@@ -101,9 +101,7 @@ namespace mensajeria {
             /**
              * Open the camera
              */
-      
-
-        FindViewById<Button>(Resource.Id.FotoBtn).Click += delegate {
+            FindViewById<Button>(Resource.Id.FotoBtn).Click += delegate {
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
                 StartActivityForResult(intent, 0);
             };
