@@ -5,6 +5,8 @@ using Android.Content;
 using System.Data;
 using System;
 using Android.Provider;
+using Android.Runtime;
+using Android.Graphics;
 
 namespace mensajeria {
     [Activity(Label = "CreateEditFormActivity")]
@@ -28,6 +30,7 @@ namespace mensajeria {
         EditText etDireccionTrabajo;
         CheckBox checkCorrespondencia;
         EditText etNotas;
+        ImageView ivFoto;
 
         DataSet contactToEdit;
         string nameFromEditActivity;
@@ -57,6 +60,11 @@ namespace mensajeria {
             etDireccionTrabajo = FindViewById<EditText>(Resource.Id.editTextDireccionTrabajo);
             checkCorrespondencia = FindViewById<CheckBox>(Resource.Id.checkCorrespondencia);
             etNotas = FindViewById<EditText>(Resource.Id.editTextNotas);
+            ivFoto = FindViewById<ImageView>(Resource.Id.imageViewFoto);
+
+
+
+      
 
             // check if edit and update, otherwise, create
             // on edit => check custom fields like photo and google maps to preload the data correctly
@@ -93,7 +101,9 @@ namespace mensajeria {
             /**
              * Open the camera
              */
-            FindViewById<Button>(Resource.Id.FotoBtn).Click += delegate {
+      
+
+        FindViewById<Button>(Resource.Id.FotoBtn).Click += delegate {
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
                 StartActivityForResult(intent, 0);
             };
@@ -222,6 +232,12 @@ namespace mensajeria {
          */
         private bool IsValidEmail(string email) {
             return Android.Util.Patterns.EmailAddress.Matcher(email).Matches();
+        }
+
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data) {
+            base.OnActivityResult(requestCode, resultCode, data);
+            Bitmap bitmap = (Bitmap)data.Extras.Get("data");
+            ivFoto.SetImageBitmap(bitmap);
         }
     }
 }
