@@ -62,10 +62,6 @@ namespace mensajeria {
             etNotas = FindViewById<EditText>(Resource.Id.editTextNotas);
             ivFoto = FindViewById<ImageView>(Resource.Id.imageViewFoto);
 
-
-
-      
-
             // check if edit and update, otherwise, create
             // on edit => check custom fields like photo and google maps to preload the data correctly
 
