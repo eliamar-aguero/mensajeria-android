@@ -105,6 +105,9 @@ namespace mensajeria {
                 if (string.IsNullOrWhiteSpace(etNombre.Text) || string.IsNullOrWhiteSpace(etCelular.Text) || string.IsNullOrWhiteSpace(etCorreo.Text)) {
                     Toast.MakeText(Application, "Ingresar campos obligatorios(Nombre, Celular y correo)", ToastLength.Long).Show();
                     return;
+                } else if (!IsValidEmail(etCorreo.Text)) {
+                    Toast.MakeText(Application, "Email no tiene el formato correcto", ToastLength.Long).Show();
+                    return;
                 } else {
                     if (isEditMode) {
                         UpdateContact();
@@ -212,6 +215,13 @@ namespace mensajeria {
             etDireccionTrabajo.Text = data.Tables[0].Rows[0]["direccion_trabajo"].ToString();
             checkCorrespondencia.Checked = !!(data.Tables[0].Rows[0]["direccion_correspondencia"].ToString() == "1");
             etNotas.Text = data.Tables[0].Rows[0]["notas"].ToString();
+        }
+
+        /**
+         * Validate if email has the correct format
+         */
+        private bool IsValidEmail(string email) {
+            return Android.Util.Patterns.EmailAddress.Matcher(email).Matches();
         }
     }
 }
