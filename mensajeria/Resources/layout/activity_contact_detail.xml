@@ -1,0 +1,121 @@
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<Button
+		android:text="Volver"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/backToContactListBtn" />
+	<LinearLayout
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="15dp"
+		android:id="@+id/linearLayout1">
+		<ImageView
+			android:src="@android:drawable/ic_menu_gallery"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/imageViewContact" />
+		<TextView
+			android:text="Eliamar Aguero"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAlignment="center"
+			android:id="@+id/txtName" />
+		<TextView
+			android:text="+(506) 7111 8141"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtMobileTitle" />
+		<TextView
+			android:text="Móvil"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtMobileLabel" />
+        <TextView
+			android:text="+(506) 7111 8141"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtSMSTitle" />
+		<TextView
+			android:text="SMS"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtSMSLabel" />
+        <TextView
+			android:text="+(506) 2222 2222"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtPersonalPhoneTitle" />
+		<TextView
+			android:text="Teléfono Particular"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtPersonalPhoneLabel" />
+        <TextView
+			android:text="+(506) 4444 4444"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtWorkPhoneTitle" />
+		<TextView
+			android:text="Trabajo"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtWorkPhoneLabel" />
+		<TextView
+			android:text="eliamar.aguero@janeirodigital.com"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtEmailTitle" />
+		<TextView
+			android:text="Email"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtEmailLabel" />
+        <TextView
+			android:text="eliamar.aguero"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/abc_text_size_medium_material"
+			android:id="@+id/txtIMTitle" />
+		<TextView
+			android:text="IM"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtIMLabel" />
+	</LinearLayout>
+    <Button
+		android:text="Editar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnEdit" />
+    <Button
+		android:text="Eliminar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/deleteContactBtn" />
+</LinearLayout>

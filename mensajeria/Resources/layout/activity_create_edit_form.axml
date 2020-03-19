@@ -13,7 +13,6 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/btnBack" />
-
         <TextView
             android:text="Ingresar Contacto"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -179,6 +178,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editTextNotas" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageViewFoto" />
         <Button
             android:text="Foto"
             android:layout_width="match_parent"
