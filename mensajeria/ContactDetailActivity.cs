@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using Android.App;
@@ -23,6 +24,7 @@ namespace mensajeria
             TextView personalPhone = FindViewById<TextView>(Resource.Id.txtPersonalPhoneTitle);
             TextView workPhone = FindViewById<TextView>(Resource.Id.txtWorkPhoneTitle);
             TextView smsPhone = FindViewById<TextView>(Resource.Id.txtSMSTitle);
+            TextView email = FindViewById<TextView>(Resource.Id.txtEmailTitle);
 
             /**
              * Get back to the list activity
@@ -46,21 +48,15 @@ namespace mensajeria
             smsPhone.Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
             personalPhone.Text = contactInfo.Tables[0].Rows[0]["tel_particular"].ToString();
             workPhone.Text = contactInfo.Tables[0].Rows[0]["tel_trabajo"].ToString();
-            FindViewById<TextView>(Resource.Id.txtEmailTitle).Text = contactInfo.Tables[0].Rows[0]["email"].ToString();
+            email.Text = contactInfo.Tables[0].Rows[0]["email"].ToString();
             FindViewById<TextView>(Resource.Id.txtIMTitle).Text = contactInfo.Tables[0].Rows[0]["direccion_im"].ToString();
 
             /**
              * Call contact
              */
-            mobilePhone.Click += delegate {
-                callToContactPhone(mobilePhone.Text);
-            };
-            personalPhone.Click += delegate {
-                callToContactPhone(personalPhone.Text);
-            };
-            workPhone.Click += delegate {
-                callToContactPhone(workPhone.Text);
-            };
+            mobilePhone.Click += (sender, e) => callToContactPhone(mobilePhone.Text);
+            personalPhone.Click += (sender, e) => callToContactPhone(personalPhone.Text);
+            workPhone.Click += (sender, e) => callToContactPhone(workPhone.Text);
 
             void callToContactPhone(string phone) {
                 Intent call = new Intent(Intent.ActionDial, Uri.Parse("tel:" + phone));
@@ -70,9 +66,12 @@ namespace mensajeria
             /**
              * Send SMS
              */
-            smsPhone.Click += async delegate {
-                await SendSMS(smsPhone.Text);
-            };
+            smsPhone.Click += async (sender, e) => await SendSMS(smsPhone.Text);
+
+            /**
+             * Send email
+             */
+            email.Click += async (sender, e) => await SendEmail(new List<string>() { email.Text });
 
 
             /**
@@ -102,11 +101,28 @@ namespace mensajeria
             };
         }
 
+        /**
+         * Open the SMS app
+         */
         private async Task SendSMS(string to) {
             try {
                 string msj = "";
                 var sms = new SmsMessage(msj, new string[] { to });
                 await Sms.ComposeAsync(sms);
+            } catch (Exception) { }
+        }
+
+        /**
+         * Open the email client app
+         */
+        private async Task SendEmail(List<string> to) {
+            try {
+                var message = new EmailMessage {
+                    Subject = "Email de contacto",
+                    Body = "Email de prueba",
+                    To = to
+                };
+                await Email.ComposeAsync(message);
             } catch (Exception) { }
         }
     }
