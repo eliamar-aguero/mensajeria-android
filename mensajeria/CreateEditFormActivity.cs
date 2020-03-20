@@ -224,6 +224,13 @@ namespace mensajeria {
             etDireccionTrabajo.Text = data.Tables[0].Rows[0]["direccion_trabajo"].ToString();
             checkCorrespondencia.Checked = !!(data.Tables[0].Rows[0]["direccion_correspondencia"].ToString() == "1");
             etNotas.Text = data.Tables[0].Rows[0]["notas"].ToString();
+
+            /**
+             * Convert base64 image from database to bitmap and display it in the image view
+             */
+            var imageBytes = Convert.FromBase64String(data.Tables[0].Rows[0]["imagen"].ToString());
+            Bitmap bitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+            FindViewById<ImageView>(Resource.Id.imageViewFoto).SetImageBitmap(bitmap);
         }
 
         /**
