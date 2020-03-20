@@ -244,7 +244,6 @@ namespace mensajeria {
 
             var bytes = stream.ToArray();
             picToDB = Convert.ToBase64String(bytes);
-            //FindViewById<TextView>(Resource.Id.debug).Text = picToDB;
         }
     }
 }

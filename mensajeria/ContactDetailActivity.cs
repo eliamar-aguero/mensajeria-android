@@ -4,6 +4,7 @@ using System.Data;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Widget;
 using Xamarin.Essentials;
@@ -43,6 +44,9 @@ namespace mensajeria
             DataSet contactInfo = new DataSet();
 
             contactInfo = ws.GetSingleContact(selectedContact);
+            var imageBytes = Convert.FromBase64String(contactInfo.Tables[0].Rows[0]["imagen"].ToString());
+            Bitmap bitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+            FindViewById<ImageView>(Resource.Id.profileImage).SetImageBitmap(bitmap);
             FindViewById<TextView>(Resource.Id.txtName).Text = contactInfo.Tables[0].Rows[0]["nombre"].ToString();
             mobilePhone.Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
             smsPhone.Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
