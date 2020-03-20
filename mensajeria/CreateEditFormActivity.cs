@@ -7,6 +7,7 @@ using System;
 using Android.Provider;
 using Android.Runtime;
 using Android.Graphics;
+using Android.Graphics.Drawables;
 
 namespace mensajeria {
     [Activity(Label = "CreateEditFormActivity")]
@@ -31,6 +32,7 @@ namespace mensajeria {
         CheckBox checkCorrespondencia;
         EditText etNotas;
         ImageView ivFoto;
+        Bitmap picAsBitMap;
 
         DataSet contactToEdit;
         string nameFromEditActivity;
@@ -158,7 +160,8 @@ namespace mensajeria {
                 etCelular.Text,
                 etDireccionTrabajo.Text,
                 checkCorrespondencia.Checked.ToString() == "True" ? 1 : 0,
-                etNotas.Text
+                etNotas.Text,
+                picAsBitMap
             );         
 
             /**
@@ -189,7 +192,8 @@ namespace mensajeria {
                 etCelular.Text,
                 etDireccionTrabajo.Text,
                 checkCorrespondencia.Checked.ToString() == "True" ? 1 : 0,
-                etNotas.Text
+                etNotas.Text,
+                picAsBitMap
             );
 
             /**
@@ -228,10 +232,12 @@ namespace mensajeria {
             return Android.Util.Patterns.EmailAddress.Matcher(email).Matches();
         }
 
+        // TODO: on load from edit mode, convert bitmap to image view source, on save button pressed, convert image view to bitmat again to update in the DB
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data) {
             base.OnActivityResult(requestCode, resultCode, data);
             Bitmap bitmap = (Bitmap)data.Extras.Get("data");
             ivFoto.SetImageBitmap(bitmap);
+            picAsBitMap = ((BitmapDrawable)ivFoto.Drawable).Bitmap;
         }
     }
 }
