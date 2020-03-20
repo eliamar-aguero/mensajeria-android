@@ -8,6 +8,7 @@ using Android.Provider;
 using Android.Runtime;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using System.IO;
 
 namespace mensajeria {
     [Activity(Label = "CreateEditFormActivity")]
@@ -32,7 +33,7 @@ namespace mensajeria {
         CheckBox checkCorrespondencia;
         EditText etNotas;
         ImageView ivFoto;
-        Bitmap picAsBitMap;
+        string picToDB;
 
         DataSet contactToEdit;
         string nameFromEditActivity;
@@ -161,7 +162,7 @@ namespace mensajeria {
                 etDireccionTrabajo.Text,
                 checkCorrespondencia.Checked.ToString() == "True" ? 1 : 0,
                 etNotas.Text,
-                picAsBitMap
+                picToDB
             );         
 
             /**
@@ -193,7 +194,7 @@ namespace mensajeria {
                 etDireccionTrabajo.Text,
                 checkCorrespondencia.Checked.ToString() == "True" ? 1 : 0,
                 etNotas.Text,
-                picAsBitMap
+                picToDB
             );
 
             /**
@@ -235,9 +236,15 @@ namespace mensajeria {
         // TODO: on load from edit mode, convert bitmap to image view source, on save button pressed, convert image view to bitmat again to update in the DB
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data) {
             base.OnActivityResult(requestCode, resultCode, data);
+            MemoryStream stream = new MemoryStream();
             Bitmap bitmap = (Bitmap)data.Extras.Get("data");
             ivFoto.SetImageBitmap(bitmap);
-            picAsBitMap = ((BitmapDrawable)ivFoto.Drawable).Bitmap;
+
+            bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
+
+            var bytes = stream.ToArray();
+            picToDB = Convert.ToBase64String(bytes);
+            //FindViewById<TextView>(Resource.Id.debug).Text = picToDB;
         }
     }
 }

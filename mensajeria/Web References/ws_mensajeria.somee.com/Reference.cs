@@ -16,9 +16,8 @@ namespace mensajeria.ws_mensajeria.somee.com {
     using System.ComponentModel;
     using System;
     using System.Data;
-    using Android.Graphics;
-
-
+    
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "8.4.8.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -163,7 +162,7 @@ namespace mensajeria.ws_mensajeria.somee.com {
                     string workAddress, 
                     int correspondence, 
                     string notes, 
-                    Bitmap imagen) {
+                    string imagen) {
             object[] results = this.Invoke("CreateContact", new object[] {
                         name,
                         organization,
@@ -201,7 +200,7 @@ namespace mensajeria.ws_mensajeria.somee.com {
                     string workAddress, 
                     int correspondence, 
                     string notes, 
-                    Bit imagen) {
+                    string imagen) {
             this.CreateContactAsync(name, organization, position, storeType, email, showAs, website, imAddress, phoneWork, phoneHome, faxWork, phoneMobile, workAddress, correspondence, notes, imagen, null);
         }
         
@@ -222,7 +221,7 @@ namespace mensajeria.ws_mensajeria.somee.com {
                     string workAddress, 
                     int correspondence, 
                     string notes, 
-                    Bit imagen, 
+                    string imagen, 
                     object userState) {
             if ((this.CreateContactOperationCompleted == null)) {
                 this.CreateContactOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCreateContactOperationCompleted);
@@ -272,7 +271,7 @@ namespace mensajeria.ws_mensajeria.somee.com {
                     string workAddress, 
                     int correspondence, 
                     string notes, 
-                    Bitmap imagen) {
+                    string imagen) {
             object[] results = this.Invoke("UpdateContact", new object[] {
                         id,
                         name,
@@ -312,7 +311,7 @@ namespace mensajeria.ws_mensajeria.somee.com {
                     string workAddress, 
                     int correspondence, 
                     string notes, 
-                    Bit imagen) {
+                    string imagen) {
             this.UpdateContactAsync(id, name, organization, position, storeType, email, showAs, website, imAddress, phoneWork, phoneHome, faxWork, phoneMobile, workAddress, correspondence, notes, imagen, null);
         }
         
@@ -334,7 +333,7 @@ namespace mensajeria.ws_mensajeria.somee.com {
                     string workAddress, 
                     int correspondence, 
                     string notes, 
-                    Bit imagen, 
+                    string imagen, 
                     object userState) {
             if ((this.UpdateContactOperationCompleted == null)) {
                 this.UpdateContactOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateContactOperationCompleted);
@@ -370,15 +369,6 @@ namespace mensajeria.ws_mensajeria.somee.com {
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "8.4.8.2")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Bit {
     }
     
     /// <remarks/>
