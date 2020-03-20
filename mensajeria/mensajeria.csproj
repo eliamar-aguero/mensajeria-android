@@ -69,8 +69,6 @@
     <Compile Include="ContactDetailActivity.cs" />
     <Compile Include="Web References\ws_mensajeria.somee.com\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
   <ItemGroup>
