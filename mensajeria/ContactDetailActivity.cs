@@ -26,7 +26,7 @@ namespace mensajeria
             TextView workPhone = FindViewById<TextView>(Resource.Id.txtWorkPhoneTitle);
             TextView smsPhone = FindViewById<TextView>(Resource.Id.txtSMSTitle);
             TextView email = FindViewById<TextView>(Resource.Id.txtEmailTitle);
-
+            TextView smsPhoneLocal = FindViewById<TextView>(Resource.Id.txtSMSLocal);
             /**
              * Get back to the list activity
              */
@@ -77,6 +77,18 @@ namespace mensajeria
              * Send SMS
              */
             smsPhone.Click += async (sender, e) => await SendSMS(smsPhone.Text);
+
+            /**
+            * Send SMSLocal
+            */
+            smsPhoneLocal.Click += delegate
+            {
+                Intent SMSIntent = new Intent(this, typeof(SMSActivity1));
+                StartActivity(SMSIntent);
+            };
+          
+            
+
 
             /**
              * Send email
