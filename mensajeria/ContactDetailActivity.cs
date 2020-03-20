@@ -42,11 +42,18 @@ namespace mensajeria
             string selectedContact = Intent.GetStringExtra("name");
             ws_mensajeria.somee.com.WebService1 ws = new ws_mensajeria.somee.com.WebService1();
             DataSet contactInfo = new DataSet();
-
             contactInfo = ws.GetSingleContact(selectedContact);
+
+            /**
+             * Convert base64 image from database to bitmap and display it in the image view
+             */
             var imageBytes = Convert.FromBase64String(contactInfo.Tables[0].Rows[0]["imagen"].ToString());
             Bitmap bitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
             FindViewById<ImageView>(Resource.Id.profileImage).SetImageBitmap(bitmap);
+
+            /**
+             * Load contact info from data base
+             */
             FindViewById<TextView>(Resource.Id.txtName).Text = contactInfo.Tables[0].Rows[0]["nombre"].ToString();
             mobilePhone.Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
             smsPhone.Text = contactInfo.Tables[0].Rows[0]["tel_movil"].ToString();
@@ -61,7 +68,6 @@ namespace mensajeria
             mobilePhone.Click += (sender, e) => callToContactPhone(mobilePhone.Text);
             personalPhone.Click += (sender, e) => callToContactPhone(personalPhone.Text);
             workPhone.Click += (sender, e) => callToContactPhone(workPhone.Text);
-
             void callToContactPhone(string phone) {
                 Intent call = new Intent(Intent.ActionDial, Uri.Parse("tel:" + phone));
                 StartActivity(call);

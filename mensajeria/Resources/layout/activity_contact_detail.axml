@@ -17,14 +17,25 @@
 		android:layout_height="wrap_content"
 		android:padding="15dp"
 		android:id="@+id/linearLayout1">
-		<ImageView
-			android:src="@android:drawable/ic_menu_gallery"
+		<LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/profileImage" />
+			android:id="@+id/linearLayout2">
+			<ImageView
+                android:minHeight="100dp"
+                android:minWidth="100dp"
+                android:layout_gravity="center_horizontal"
+				android:src="@android:drawable/ic_menu_gallery"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/profileImage" />
+		</LinearLayout>
 		<TextView
 			android:text="Eliamar Aguero"
-            android:textColor="#008080"
+			android:textColor="#008080"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -39,12 +50,12 @@
 			android:id="@+id/txtMobileTitle" />
 		<TextView
 			android:text="Móvil"
-            android:textColor="#008080"
+			android:textColor="#008080"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtMobileLabel" />
-        <TextView
+		<TextView
 			android:text="+(506) 7111 8141"
 			android:textAppearance="?android:attr/textAppearanceMedium"
 			android:layout_width="match_parent"
@@ -53,12 +64,12 @@
 			android:id="@+id/txtSMSTitle" />
 		<TextView
 			android:text="SMS"
-            android:textColor="#008080"
+			android:textColor="#008080"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtSMSLabel" />
-        <TextView
+		<TextView
 			android:text="+(506) 2222 2222"
 			android:textAppearance="?android:attr/textAppearanceMedium"
 			android:layout_width="match_parent"
@@ -67,12 +78,12 @@
 			android:id="@+id/txtPersonalPhoneTitle" />
 		<TextView
 			android:text="Teléfono Particular"
-            android:textColor="#008080"
+			android:textColor="#008080"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtPersonalPhoneLabel" />
-        <TextView
+		<TextView
 			android:text="+(506) 4444 4444"
 			android:textAppearance="?android:attr/textAppearanceMedium"
 			android:layout_width="match_parent"
@@ -81,7 +92,7 @@
 			android:id="@+id/txtWorkPhoneTitle" />
 		<TextView
 			android:text="Trabajo"
-            android:textColor="#008080"
+			android:textColor="#008080"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -95,12 +106,12 @@
 			android:id="@+id/txtEmailTitle" />
 		<TextView
 			android:text="Email"
-            android:textColor="#008080"
+			android:textColor="#008080"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtEmailLabel" />
-        <TextView
+		<TextView
 			android:text="eliamar.aguero"
 			android:textAppearance="?android:attr/textAppearanceMedium"
 			android:layout_width="match_parent"
@@ -109,7 +120,7 @@
 			android:id="@+id/txtIMTitle" />
 		<TextView
 			android:text="IM"
-            android:textColor="#008080"
+			android:textColor="#008080"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
